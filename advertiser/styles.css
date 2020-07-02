@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+}
+
+footer {
+  background: #e9f0f7;
+  padding: 0.5rem;
+  font-family: 'Lucida Console', Monaco, monospace;
+  margin-top: 10rem;
+  animation: appear 0.1s ease-out;
+  font-size: 0.8rem;
+  color: #0d304a;
+}
+
+img {
+  margin: 2rem auto;
+  display: block;
+  background-color: red;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
