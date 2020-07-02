@@ -15,6 +15,10 @@ app.get('/script', (req, res) => {
   res.sendFile(__dirname + '/script.js')
 })
 
+app.get('/conversion', (req, res) => {
+  console.log(req.query)
+})
+
 const listener = app.listen(8000, () => {
   console.log('App is listening on port ' + listener.address().port)
 })
