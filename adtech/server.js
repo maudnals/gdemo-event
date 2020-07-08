@@ -4,6 +4,8 @@ const app = express()
 // Adtech conversion logics
 
 const priceBuckets = {
+  // expected to be more of a label such as "started checkout flow" ("register to newsletter")
+  // ""
   $80: '1',
   $120: '2',
   $200: '3'
@@ -20,12 +22,12 @@ function toHex(value, maxValue) {
 const getConversionData = (value) => toHex(value, maxValue)
 
 // Server
-
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
-})
-
 app.use(express.static('public'))
+
+app.post('/', (req, res) => {
+  console.log(req)
+  // res.sendFile(__dirname + '/index.html')
+})
 
 app.get('/ad', (req, res) => {
   res.sendFile(__dirname + '/ad.html')
