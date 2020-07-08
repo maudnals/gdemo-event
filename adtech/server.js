@@ -47,5 +47,7 @@ app.get('/conversion', (req, res) => {
 })
 
 const listener = app.listen(8000, () => {
-  console.log('App is listening on port ' + listener.address().port)
+  console.log(
+    '🚀 Adtech server is listening on port ' + listener.address().port
+  )
 })
