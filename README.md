@@ -1,3 +1,7 @@
+Demo for [Click Through Conversion Measurement Event-Level API](https://github.com/WICG/conversion-measurement-api).
+
+# Set and run locally
+
 - Run `yarn`
 - Run `yarn start` -> you should have 3 servers runnning: 8080 (publisher), 8081 (advertiser), 8000 (adtech)
 - Open Chrome Canary
