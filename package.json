@@ -1,0 +1,23 @@
+{
+  "name": "gdemo-event",
+  "version": "1.0.0",
+  "description": "In Canary: #enable-experimental-web-platform-features and #conversion-measurement-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "(cd publisher && http-server --p 8080) & (cd advertiser && http-server --p 8081) & (cd adtech && npm start)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maudnals/gdemo-event.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maudnals/gdemo-event/issues"
+  },
+  "homepage": "https://github.com/maudnals/gdemo-event#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
