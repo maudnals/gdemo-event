@@ -9,17 +9,13 @@ function toHex(value, maxValue) {
 
 // Conversion logics
 
-const priceBuckets = {
-  // expected to be more of a label such as "started checkout flow" ("register to newsletter")
-  // ""
-  $80: '1',
-  $120: '2',
-  $200: '3'
+const conversionValues = {
+  'sign-up': 1,
+  'add-to-cart': 2,
+  'check-out': 3
 }
 
-const prices = Object.keys(priceBuckets)
-
-const maxValue = priceBuckets[prices[prices.length - 1]]
+const maxValue = Math.max(...Object.values(conversionValues))
 
 const getConversionData = (value) => toHex(value, maxValue)
 
@@ -51,7 +47,8 @@ app.get('/script', (req, res) => {
 })
 
 app.get('/conversion', (req, res) => {
-  const priceBucket = priceBuckets[req.query.price]
+  // TODO what if 3?
+  const priceBucket = conversionValues[req.query.type]
   const conversionData = getConversionData(priceBucket)
   res.redirect(
     302,
