@@ -3,10 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ad</title>
+    <title>Adtech server</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body style="padding: 0; margin: 0; font-family: sans-serif;">
-    Adtech server UI
-    </a>
+  <body>
+    <h1>Adtech server</h1>
+    <!-- <button>🔄Refresh view (or just reload the page)</button> -->
+    <h2>Reports (<span id="reportCount">0</span>)</h2>
+    <div class="row header">
+      <div>Conversion data</div>
+      <div>Impression data</div>
+      <div>Attribution</div>
+    </div>
+    <div id="reportList"></div>
+    <script src="/script-reports.js"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@ function toHex(value, maxValue) {
 }
 
 // Conversion logics
+
 const priceBuckets = {
   // expected to be more of a label such as "started checkout flow" ("register to newsletter")
   // ""
@@ -22,7 +23,9 @@ const maxValue = priceBuckets[prices[prices.length - 1]]
 
 const getConversionData = (value) => toHex(value, maxValue)
 
-const getConversionData = (value) => toHex(value, maxValue)
+// Reports
+
+let reports = []
 
 // Server
 
@@ -54,6 +57,10 @@ app.get('/conversion', (req, res) => {
     302,
     `/.well-known/register-conversion?conversion-data=${conversionData}`
   )
+})
+
+app.get('/reports', (req, res) => {
+  res.send(JSON.stringify(reports))
 })
 
 const listener = app.listen(8000, () => {
