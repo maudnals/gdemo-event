@@ -6,42 +6,13 @@ body {
 
 h1 {
   display: inline-block;
-  background: #fff59a;
+  background: #00c5334d;
   padding: 0.1rem 0.2rem;
 }
 
-.button {
-  color: white;
-  background-color: black;
-  transition: background-color 0.2s ease-out;
-  text-decoration: none;
-  padding: 0.8rem 2rem;
-  border-radius: 7px;
-  margin: 0 auto;
-}
-
-.button:hover {
-  background-color: #3f3f3f;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-img {
-  margin: 2rem auto;
-  display: block;
-}
-
-.pixel {
-  background-color: red;
-}
-
-.select {
-  user-select: all;
-  cursor: default;
+article {
+  margin: 2rem 0;
+  line-height: 1.8;
 }
 
 .actor-adtech,
