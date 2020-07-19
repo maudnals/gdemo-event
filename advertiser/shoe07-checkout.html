@@ -16,9 +16,19 @@
       height="8"
       width="8"
     />
-    <footer>
-      ℹ️ As defined by the advertiser/shoe retailer, this page contains a
-      conversion pixel ( 🟥 ).
-    </footer>
+    <details>
+      <summary>ℹ️ API info</summary>
+      As defined by the <span class="actor-advertiser">advertiser</span>, this
+      page contains a conversion pixel ( 🟥 ). This triggers a request to the
+      <span class="actor-adtech">adtech</span> server, which in turn determines
+      whether a conversion should be registered. If so: the server send a 302
+      request to the <span class="actor-browser">browser</span>, who then
+      schedules a conversion report. This report will be sent to the
+      <em>reportingorigin</em> defined in the ad tag (typically, an
+      <span class="actor-adtech">adtech</span> server).<br />
+      👁 See the conversion report in
+      <span class="select">chrome://conversion-internals/</span>.
+    </details>
+    <footer>👋Questions/feedback? Ping @maudn / @maudnals.</footer>
   </body>
 </html>
