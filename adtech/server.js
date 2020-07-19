@@ -22,7 +22,8 @@ function toHex(value, maxValue) {
 const getConversionData = (value) => toHex(value, maxValue)
 
 // Server
-app.use(express.static('public'))
+
+app.use(express.static('static'))
 
 app.post('/', (req, res) => {
   console.log(req)
