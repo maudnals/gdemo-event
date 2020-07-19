@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT = 8000
 
 // Utils
 
@@ -60,7 +61,7 @@ app.get('/reports', (req, res) => {
   res.send(JSON.stringify(reports))
 })
 
-const listener = app.listen(8000, () => {
+const listener = app.listen(PORT, () => {
   console.log(
     '🚀 Adtech server is listening on port ' + listener.address().port
   )

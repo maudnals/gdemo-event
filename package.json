@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "(cd publisher && http-server --p 8080) & (cd advertiser && http-server --p 8081) & (cd adtech && node server.js)"
+    "start": "(cd publisher && node server.js) & (cd advertiser && node server.js) & (cd adtech && node server.js)"
   },
   "repository": {
     "type": "git",
