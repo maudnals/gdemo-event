@@ -1,8 +1,13 @@
 const express = require('express')
 const app = express()
 
-// Adtech conversion logics
+// Utils
 
+function toHex(value, maxValue) {
+  return (parseInt(value, 16) % maxValue).toString(16)
+}
+
+// Conversion logics
 const priceBuckets = {
   // expected to be more of a label such as "started checkout flow" ("register to newsletter")
   // ""
@@ -15,9 +20,7 @@ const prices = Object.keys(priceBuckets)
 
 const maxValue = priceBuckets[prices[prices.length - 1]]
 
-function toHex(value, maxValue) {
-  return (parseInt(value, 16) % maxValue).toString(16)
-}
+const getConversionData = (value) => toHex(value, maxValue)
 
 const getConversionData = (value) => toHex(value, maxValue)
 
@@ -25,9 +28,15 @@ const getConversionData = (value) => toHex(value, maxValue)
 
 app.use(express.static('static'))
 
-app.post('/', (req, res) => {
-  console.log(req)
-  // res.sendFile(__dirname + '/index.html')
+app.post('/*', (req, res) => {
+  const newReport = req.query
+  console.log(req.query)
+  reports = [...reports, newReport]
+  // TODO response OK
+})
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html')
 })
 
 app.get('/ad', (req, res) => {
