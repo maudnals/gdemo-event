@@ -8,25 +8,3 @@ h1 Advertiser website
 h2 Shoes 07 added to cart
 img(width='200' height='187' src='/shoe07.jpg' alt='shoe 07')
 img.pixel(src=adtechRequestUrl height='8' width='8')
-details
-  summary &#x2139;&#xFE0F; API info
-  |       As defined by the 
-  span.actor-advertiser advertiser
-  | , this
-  |       page contains a conversion pixel ( &#x1F7E5; ). This triggers a request to the
-  span.actor-adtech adtech
-  |  server, which in turn determines
-  |       whether a conversion should be registered. If so: the server send a 302
-  |       request to the 
-  span.actor-browser browser
-  | , who then
-  |       schedules a conversion report. This report will be sent to the
-  em reportingorigin
-  |  defined in the ad tag (typically, an
-  span.actor-adtech adtech
-  |  server).
-  br
-  |       &#x1F441; See the conversion report in
-  span.select chrome://conversion-internals/
-  | .
-footer &#x1F44B;Questions/feedback? Ping @maudn / @maudnals.
