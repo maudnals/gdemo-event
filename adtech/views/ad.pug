@@ -13,6 +13,7 @@ script.
   const randomNums = new Uint32Array(2)
   // ?
   window.crypto.getRandomValues(randomNums)
+  // dynamically add impression data (click ID)
   // TODO: this should move away from setAttribute (crbug.com/1097144)
   adLink.setAttribute(
   'impressiondata',

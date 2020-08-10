@@ -3,7 +3,9 @@ require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` })
 
 const app = express()
 app.set('view engine', 'pug')
+// TODO make it env var
 const PORT = 8000
+// TODO clean pug files
 
 // Utils
 
@@ -31,13 +33,6 @@ let reports = []
 
 app.use(express.static('static'))
 
-app.post('/*', (req, res) => {
-  const newReport = req.query
-  console.log(req.query)
-  reports = [...reports, newReport]
-  // TODO response OK
-})
-
 app.get('/', (req, res) => {
   res.render('index')
 })
@@ -53,6 +48,7 @@ app.get('/ad', (req, res) => {
   })
 })
 
+// TODO rename "script"
 app.get('/script', (req, res) => {
   res.set('Content-Type', 'text/javascript')
   const adUrl = `${process.env.ADTECH_URL}/ad`
@@ -73,6 +69,13 @@ app.get('/conversion', (req, res) => {
 
 app.get('/reports', (req, res) => {
   res.send(JSON.stringify(reports))
+})
+
+app.post('/*', (req, res) => {
+  const newReport = req.query
+  console.log(req.query)
+  reports = [...reports, newReport]
+  // TODO response OK
 })
 
 const listener = app.listen(process.env.PORT || PORT, () => {
