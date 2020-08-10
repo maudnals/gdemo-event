@@ -6,8 +6,8 @@ TODO
 
 # Set and run locally
 
-- Run `yarn`
-- Run `yarn start` -> you should have 3 servers runnning: 8080 (publisher), 8081 (advertiser), 8000 (adtech)
+- Run `sh ./init.sh`
+- Run `sh ./start.sh` -> You should have 3 servers runnning: 8080 (publisher), 8081 (advertiser), 8000 (adtech)
 - Open Chrome Canary
 - In Chrome Canary, enable the flags:
   `#enable-experimental-web-platform-features` and `#conversion-measurement-api`

@@ -1,0 +1,1 @@
+(cd publisher && node server.js) & (cd advertiser && node server.js) & (cd adtech && node server.js)
