@@ -16,9 +16,9 @@ function toHex(value, maxValue) {
 // Conversion logics
 
 const conversionValues = {
-  'sign-up': 1,
+  checkout: 1,
   'add-to-cart': 2,
-  'check-out': 3
+  signup: 3
 }
 
 const maxValue = Math.max(...Object.values(conversionValues))
