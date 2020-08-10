@@ -1,12 +1,9 @@
 body {
   font-family: sans-serif;
-  --max-width: 45rem;
+  --max-width: 50rem;
+  --font-size-s: 0.9rem;
+  --font-size-xs: 0.8rem;
   max-width: var(--max-width);
-}
-
-::selection {
-  color: white;
-  background: black;
 }
 
 h2 {
@@ -21,6 +18,32 @@ h3 {
 article {
   margin: 2rem 0;
   line-height: 1.8;
+}
+
+.code {
+  font-size: var(--font-size-xs);
+  font-family: 'Lucida Console', Monaco, monospace;
+}
+
+.hint,
+.do {
+  font-size: var(--font-size-s);
+}
+
+.do {
+  background: whitesmoke;
+  padding: 0.2rem;
+  margin: 0.4rem 0 1.2rem 0;
+}
+
+.select {
+  user-select: all;
+  cursor: default;
+}
+
+::selection {
+  color: white;
+  background: black;
 }
 
 .actor-adtech,
@@ -44,25 +67,4 @@ article {
 
 .actor-browser {
   background-color: #0050ff38;
-}
-
-.code {
-  font-size: 0.8rem;
-  font-family: 'Lucida Console', Monaco, monospace;
-}
-
-.select {
-  user-select: all;
-  cursor: default;
-}
-
-.hint {
-  font-size: 0.9rem;
-}
-
-.do {
-  background: whitesmoke;
-  padding: 0.2rem;
-  font-size: 0.9rem;
-  margin: 0.4rem 0 1.2rem 0;
 }
