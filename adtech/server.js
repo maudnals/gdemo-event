@@ -4,7 +4,7 @@ require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` })
 const app = express()
 app.set('view engine', 'pug')
 // TODO make it env var
-const PORT = 8000
+const PORT = 3000
 // TODO clean pug files
 
 // Utils
