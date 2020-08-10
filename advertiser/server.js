@@ -12,7 +12,7 @@ app.get('/shoe07/added-to-cart', (req, res) => {
   res.sendFile(__dirname + '/shoe07-added-to-cart.html')
 })
 
-const listener = app.listen(PORT, () => {
+const listener = app.listen(process.env.PORT || PORT, () => {
   console.log(
     '👟 Advertiser server is listening on port ' + listener.address().port
   )

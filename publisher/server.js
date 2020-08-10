@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 })
 
-const listener = app.listen(PORT, () => {
+const listener = app.listen(process.env.PORT || PORT, () => {
   console.log(
     '📰 Publisher server is listening on port ' + listener.address().port
   )

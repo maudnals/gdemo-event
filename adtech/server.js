@@ -61,7 +61,7 @@ app.get('/reports', (req, res) => {
   res.send(JSON.stringify(reports))
 })
 
-const listener = app.listen(PORT, () => {
+const listener = app.listen(process.env.PORT || PORT, () => {
   console.log(
     '🚀 Adtech server is listening on port ' + listener.address().port
   )
