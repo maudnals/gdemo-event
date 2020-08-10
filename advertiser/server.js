@@ -1,15 +1,19 @@
 const express = require('express')
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` })
+
 const app = express()
+app.set('view engine', 'pug')
 const PORT = 8081
 
 app.use(express.static('static'))
 
 app.get('/shoe07', (req, res) => {
-  res.sendFile(__dirname + '/shoe07.html')
+  res.render('shoe07')
 })
 
 app.get('/shoe07/added-to-cart', (req, res) => {
-  res.sendFile(__dirname + '/shoe07-added-to-cart.html')
+  const adtechRequestUrl = `${process.env.ADTECH_URL}/conversion?model=shoe07&type=add-to-cart`
+  res.render('shoe07-added-to-cart', { adtechRequestUrl })
 })
 
 const listener = app.listen(process.env.PORT || PORT, () => {

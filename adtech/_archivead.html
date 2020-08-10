@@ -10,19 +10,20 @@
     <!-- 604800000 = 7 days in milliseconds -->
     <a
       id="ad"
-      href="http://127.0.0.1:8081/shoe07"
-      conversiondestination="http://127.0.0.1:8081/"
+      href="https://advertiser-dot-peacock-demo-283822.nw.r.appspot.com/shoe07"
+      conversiondestination="https://advertiser-dot-peacock-demo-283822.nw.r.appspot.com/"
       impressiondata=""
-      reportingorigin="http://127.0.0.1:8000/"
+      reportingorigin="https://adtech-dot-peacock-demo-283822.nw.r.appspot.com/"
       impressionexpiry="604800000"
       target="_parent"
     >
-      <img width="200" src="./shoe07.jpg" alt="shoe 07" />
+      <img width="200" src="/shoe07.jpg" alt="shoe 07" />
     </a>
     <script>
       const adLink = document.getElementById('ad')
-      // random 64 bit hex number for the id.
+      // random 64 bit hex number
       const randomNums = new Uint32Array(2)
+      // ?
       window.crypto.getRandomValues(randomNums)
       // TODO: this should move away from setAttribute (crbug.com/1097144)
       adLink.setAttribute(

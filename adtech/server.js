@@ -1,5 +1,8 @@
 const express = require('express')
+require('dotenv').config({ path: `.env.${process.env.NODE_ENV}` })
+
 const app = express()
+app.set('view engine', 'pug')
 const PORT = 8000
 
 // Utils
@@ -36,15 +39,26 @@ app.post('/*', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
+  res.render('index')
 })
 
 app.get('/ad', (req, res) => {
-  res.sendFile(__dirname + '/ad.html')
+  const href = `${process.env.ADVERTISER_URL}/shoe07`
+  const conversionDestination = process.env.ADVERTISER_URL
+  const reportingOrigin = process.env.ADTECH_URL
+  res.render('ad', {
+    href,
+    conversiondestination: conversionDestination,
+    reportingorigin: reportingOrigin
+  })
 })
 
 app.get('/script', (req, res) => {
-  res.sendFile(__dirname + '/script.js')
+  res.set('Content-Type', 'text/javascript')
+  const adUrl = `${process.env.ADTECH_URL}/ad`
+  res.send(
+    `console.log('✔️ Loaded adtech script'); document.write("<iframe src='${adUrl}' allow='conversion-measurement' width=200 height=230 scrolling=no frameborder=1 padding=0></iframe>")`
+  )
 })
 
 app.get('/conversion', (req, res) => {

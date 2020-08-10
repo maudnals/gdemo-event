@@ -1,1 +1,1 @@
-(cd publisher && node server.js) & (cd advertiser && node server.js) & (cd adtech && node server.js)
+(cd publisher && yarn start:dev) & (cd advertiser && yarn start:dev) & (cd adtech && yarn start:dev)
