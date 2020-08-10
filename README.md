@@ -18,3 +18,9 @@ TODO
 - In localhost:8080 (publisher), click the ad. This navigates to the advertiser's page. Click "Add to cart" to convert. In the conversion internals, you should see one impression and one conversion report scheduled.
 
 💡More info about the API and these steps is visible in the UI.
+
+# Live demo
+
+- https://publisher-dot-peacock-demo-283822.nw.r.appspot.com
+- https://advertiser-dot-peacock-demo-283822.nw.r.appspot.com
+- https://adtech-dot-peacock-demo-283822.nw.r.appspot.com
